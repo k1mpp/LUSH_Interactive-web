@@ -2,12 +2,12 @@ $(document).ready(function(){
 
 //     변수
     const visu_slide = $('.visual_wrap>li');
-    const visu_btm_List =$('.visu_btm_wrap>li.visu_btm_List');//하단 버튼
-    const visu_right =$('.visu_arrow.right');//오른쪽버튼
-    const visu_left =$('.visu_arrow.left');//왼쪽버튼
+    const visu_btm_List =$('.visu_btm_wrap>li.visu_btm_List');
+    const visu_right =$('.visu_arrow.right');
+    const visu_left =$('.visu_arrow.left');
 
-    const play_Btn = $('.visu_btm_wrap li.controls_wrap .control.start');//play btn
-    const stop_Btn = $('.visu_btm_wrap li.controls_wrap .control.stop');//stop btn
+    const play_Btn = $('.visu_btm_wrap li.controls_wrap .control.start');
+    const stop_Btn = $('.visu_btm_wrap li.controls_wrap .control.stop');
 
     //  play btn영역
     let slider_play = setInterval(auto,6000);
@@ -29,9 +29,9 @@ $(document).ready(function(){
     // Event
     function slide_Event(){
 
-        const on_slide = $('.visual_wrap>li.On');//활성화된 슬라이드 저장
-        const idx = on_slide.index();//활성화된 슬라이드의 순서값 저장
-        const veil = on_slide.children('.visu_veil');//활성화된 슬라이드 자식 veil
+        const on_slide = $('.visual_wrap>li.On');
+        const idx = on_slide.index();
+        const veil = on_slide.children('.visu_veil');
         const txt_wrap = on_slide.children('.visu_txt_wrap');
 
         veil.animate({
@@ -56,7 +56,7 @@ $(document).ready(function(){
 
     // RightBtn
     function right(){
-        const idx = $('.visual_wrap>li.On').index()//현재의 순서값 저장
+        const idx = $('.visual_wrap>li.On').index()
         // 기본값 설정
         reset();
 
@@ -89,7 +89,7 @@ $(document).ready(function(){
 
     // Left
     function left (){
-        const idx = $('.visual_wrap>li.On').index()//현재의 순서값 저장
+        const idx = $('.visual_wrap>li.On').index()
         // 기본값 설정
         reset();
 
