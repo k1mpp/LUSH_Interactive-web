@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(font/NotoSansKR-Light-subset.eot);
+    src: local('Noto Sans Korean'), local("Apple SD Gothic Neo"), url(font/NotoSansKR-Light.woff2) format('woff2'), url(font/NotoSansKR-Light.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(font/NotoSansKR-Medium-subset.eot);
+    src: local('Noto Sans Korean'), local("Apple SD Gothic Neo"), url(font/NotoSansKR-Medium-subset.woff) format('woff')
+}
+
+
+@font-face {
+    font-family: 'Parkway Lush Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Parkway Lush Regular'), url('font/ParkwayLush-0WDj4.woff') format('woff');
+    }
