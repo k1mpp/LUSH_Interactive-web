@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    //  0 변수의 정의
+//     변수
     const visu_slide = $('.visual_wrap>li');
     const visu_btm_List =$('.visu_btm_wrap>li.visu_btm_List');//하단 버튼
     const visu_right =$('.visu_arrow.right');//오른쪽버튼
@@ -9,16 +9,16 @@ $(document).ready(function(){
     const play_Btn = $('.visu_btm_wrap li.controls_wrap .control.start');//play btn
     const stop_Btn = $('.visu_btm_wrap li.controls_wrap .control.stop');//stop btn
 
-    // 10 play btn영역  6초에 한번씩 실행하는 내용을 변수에 저장 
+    //  play btn영역
     let slider_play = setInterval(auto,6000);
     let slider_stop; 
 
-    //1-0 첫번째 함수 호출
+    //첫번째 함수 호출
     window.addEventListener('onload',first);
 
     first();
 
-    // 1 첫번째 불이 켜지는 함수 만들기
+    // TurnOn 함수
     function first(){
         visu_slide.eq(0).addClass('On');
 
@@ -26,7 +26,7 @@ $(document).ready(function(){
     }
 
 
-    // 2.이벤트 함수 만들기
+    // Event
     function slide_Event(){
 
         const on_slide = $('.visual_wrap>li.On');//활성화된 슬라이드 저장
@@ -50,28 +50,26 @@ $(document).ready(function(){
 
     }
 
-    // 3.오는쪽 버튼 클릭 이벤트
+    // RightBtn 호출
     visu_right.click(right);
 
 
-    // 3-1 right 함수 만들기
+    // RightBtn
     function right(){
         const idx = $('.visual_wrap>li.On').index()//현재의 순서값 저장
         // 기본값 설정
         reset();
 
-        if(idx < 3){//현재 순서값이 2보다 작다면
-            //하나씩 더해준다
+        if(idx < 3){
             visu_slide.eq(idx+1).addClass('On');
         }
-        else if(idx == 3){//현재 순서값이 2와 같다면
-            //0이된다
+        else if(idx == 3){
             visu_slide.eq(0).addClass('On');
         }
         slide_Event();
     }
 
-    // 4.reset 함수 만들기
+    // Reset
     function reset(){
         visu_slide.removeClass('On');
         visu_btm_List.removeClass('Act');
@@ -86,10 +84,10 @@ $(document).ready(function(){
 
 
 
-    // 5 left btn click event
+    // LeftBtn Click Event
     visu_left.click(left);
 
-    // 6.left 함수
+    // Left
     function left (){
         const idx = $('.visual_wrap>li.On').index()//현재의 순서값 저장
         // 기본값 설정
@@ -110,10 +108,9 @@ $(document).ready(function(){
         slide_Event();
     }
 
-    // 7.하단 버튼 클릭
+    // LowBtn
     visu_btm_List.click(bottom)
 
-    // 8.하단 버튼 함수
     function bottom(e){
         e.preventDefault();
         const idx = $(this).index();
@@ -125,14 +122,14 @@ $(document).ready(function(){
     }
 
 
-    //9 자동 play 함수 
+    // AutoBtn 
     function auto(){
         visu_right.trigger('click');
     }
 
 
 
-    // 11 stop btn click
+    // StopBtn
     stop_Btn.click(stop)
     
     function stop(){
@@ -141,7 +138,7 @@ $(document).ready(function(){
         slider_stop= clearInterval(slider_play);
         
     }
-    // 12. play_Btn click
+    //  PlayBtn click
     play_Btn.click(function(){
         stop_Btn.fadeIn(0);
         play_Btn.fadeOut(0);
